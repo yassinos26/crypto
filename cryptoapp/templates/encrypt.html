@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Chiffrement</title></head>
+<body>
+  <h1>Chiffrer un message</h1>
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Chiffrer</button></form>
+  {% if encrypted_message %}
+    <h3>Message chiffré :</h3><textarea rows="4" cols="60">{{ encrypted_message }}</textarea>
+    <h3>Clé :</h3><textarea rows="2" cols="60">{{ key }}</textarea>
+  {% endif %}
+  <a href="/decrypt">Déchiffrer un message</a>
+</body>
+</html>

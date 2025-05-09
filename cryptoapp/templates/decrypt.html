@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Déchiffrement</title></head>
+<body>
+  <h1>Déchiffrer un message</h1>
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Déchiffrer</button></form>
+  {% if decrypted_message %}
+    <h3>Message déchiffré :</h3><p>{{ decrypted_message }}</p>
+  {% endif %}
+  <a href="/">Chiffrer un message</a>
+</body>
+</html>
